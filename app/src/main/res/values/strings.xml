@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SpotMyAcne App</string>
+    <string name="spot_my_acne">Spot My Acne</string>
+    <string name="log_in">Log In</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="don_t_you_have_an_account">Don\'t you have an account?</string>
+    <string name="register">Register</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="home">Home</string>
+    <string name="welcome">Welcome!</string>
+    <string name="map">Map</string>
+    <string name="calendar">Calendar</string>
+</resources>
