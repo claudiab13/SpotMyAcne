@@ -12,4 +12,8 @@
     <string name="welcome">Welcome!</string>
     <string name="map">Map</string>
     <string name="calendar">Calendar</string>
+    <string name="calendarBar">Calendar</string>
+    <string name="homeBar">Home</string>
+    <string name="mapBar">Map</string>
+    <string name="profileBar">Profile</string>
 </resources>
