@@ -39,7 +39,6 @@ public class HomeActivity extends AppCompatActivity {
 */
         Button map = findViewById(R.id.map);
         Button calendar = findViewById(R.id.calendar);
-        Button profile = findViewById(R.id.profile);
 
         map.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, MapActivity.class);
@@ -51,10 +50,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        profile.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-            startActivity(intent);
-        });
+
     }
 }
 
