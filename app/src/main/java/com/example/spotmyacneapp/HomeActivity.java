@@ -2,13 +2,9 @@ package com.example.spotmyacneapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class HomeActivity extends AppCompatActivity {
     @Override
@@ -16,6 +12,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        /*
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigationview);
         bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -39,5 +36,25 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
+*/
+        Button map = findViewById(R.id.map);
+        Button calendar = findViewById(R.id.calendar);
+        Button profile = findViewById(R.id.profile);
+
+        map.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, MapActivity.class);
+            startActivity(intent);
+        });
+
+        calendar.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, CalendarActivity.class);
+            startActivity(intent);
+        });
+
+        profile.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
     }
 }
+

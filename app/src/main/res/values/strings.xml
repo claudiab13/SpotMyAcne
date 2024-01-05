@@ -16,4 +16,6 @@
     <string name="homeBar">Home</string>
     <string name="mapBar">Map</string>
     <string name="profileBar">Profile</string>
+    <string name="my_calendar">My Calendar</string>
+    <string name="my_profile">My Profile</string>
 </resources>
