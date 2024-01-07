@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Alte atribute de temă pot fi adăugate aici -->
+        <item name="materialCalendarStyle">@style/Widget.MaterialCalendar</item>
+    </style>
+
+    <style name="Widget.MaterialCalendar" parent="android:Widget.Material.CalendarView">
+        <!-- Adăugați atribute specifice aici, dacă este necesar -->
+    </style>
+
 </resources>

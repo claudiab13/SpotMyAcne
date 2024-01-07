@@ -22,7 +22,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" >
+        </activity>
+        <activity
+            android:name=".CalendarActivity"
+            android:theme="@style/AppTheme">
+            <!-- Alte atribute de activitate pot fi adăugate aici -->
+        </activity>
+
+        <activity android:name=".MapActivity" >
+        </activity>
 
     </application>
 

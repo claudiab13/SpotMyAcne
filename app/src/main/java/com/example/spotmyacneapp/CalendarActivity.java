@@ -2,13 +2,10 @@ package com.example.spotmyacneapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.util.Log;
+import android.widget.ImageButton;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class CalendarActivity extends AppCompatActivity {
     @Override
@@ -16,6 +13,17 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
+        ImageButton back = findViewById(R.id.backCalendar);
+
+        back.setOnClickListener(view -> {
+            Log.d("BackCalendar", "Butonul backCalendar a fost apăsat."); // Mesaj de log pentru a confirma apăsarea butonului
+
+            Intent intent = new Intent(CalendarActivity.this, HomeActivity.class);
+            startActivity(intent);
+
+
+        });
+/*
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigationview);
         bottomNavigationView.setSelectedItemId(R.id.calendar);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -31,14 +39,10 @@ public class CalendarActivity extends AppCompatActivity {
                     return true;
                 } else if (item.getItemId() == R.id.calendar) {
                     return true;
-                } else if (item.getItemId() == R.id.profile) {
-                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                    overridePendingTransition(0,0);
-                    return true;
                 }
                 return false;
             }
-        });
+        });*/
 
     }
 }

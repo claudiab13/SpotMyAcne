@@ -2,10 +2,10 @@ package com.example.spotmyacneapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,16 +15,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button register = findViewById(R.id.registermain);
-        Button login = findViewById(R.id.login);
+        Button login = findViewById(R.id.loginmain);
 
         register.setOnClickListener(view -> {
+            Log.d("RegisterButton", "Butonul de register a fost apăsat."); // Mesaj de log pentru a confirma apăsarea butonului
+
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(intent);
+
+            Log.d("RegisterButton", "Redirecționare către RegisterActivity."); // Mesaj de log pentru a confirma redirecționarea
+
         });
 
         login.setOnClickListener(view -> {
+
+            Log.d("LoginButton", "Butonul de login a fost apăsat."); // Mesaj de log pentru a confirma apăsarea butonului
+
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
+
+            Log.d("LoginButton", "Redirecționare către HomeActivity."); // Mesaj de log pentru a confirma redirecționarea
+
+
         });
 
         /*

@@ -2,13 +2,10 @@ package com.example.spotmyacneapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.util.Log;
+import android.widget.ImageButton;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class MapActivity extends AppCompatActivity {
     @Override
@@ -16,6 +13,17 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+        ImageButton back = findViewById(R.id.backMap);
+
+        back.setOnClickListener(view -> {
+            Log.d("BackMap", "Butonul backMap a fost apăsat."); // Mesaj de log pentru a confirma apăsarea butonului
+
+            Intent intent = new Intent(MapActivity.this, HomeActivity.class);
+            startActivity(intent);
+
+
+        });
+/*
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigationview);
         bottomNavigationView.setSelectedItemId(R.id.map);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -38,7 +46,7 @@ public class MapActivity extends AppCompatActivity {
                 }
                 return false;
             }
-        });
+        });*/
 
     }
 }

@@ -18,4 +18,9 @@
     <string name="profileBar">Profile</string>
     <string name="my_calendar">My Calendar</string>
     <string name="my_profile">My Profile</string>
+    <string name="mapView">mapView</string>
+    <string name="mapview">mapview</string>
+    <string name="find_you_doc">Find you doc</string>
+    <string name="button">Button</string>
+    <string name="backMap">TODO</string>
 </resources>
