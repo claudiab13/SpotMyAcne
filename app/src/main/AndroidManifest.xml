@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+ 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -26,13 +30,15 @@
         </activity>
         <activity
             android:name=".CalendarActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme1">
             <!-- Alte atribute de activitate pot fi adăugate aici -->
         </activity>
 
         <activity android:name=".MapActivity" >
         </activity>
-
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB7JMIVWQi_S-b6zUQRdRJWTApoe_-1mlc" />
     </application>
 
 </manifest>

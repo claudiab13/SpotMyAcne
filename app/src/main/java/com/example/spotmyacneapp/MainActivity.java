@@ -7,8 +7,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallback*/ {
+    /*private GoogleMap myMap;
+    private final int FINE_PERMISSION_CODE = 1;
+    Location currentLocation;
+    FusedLocationProviderClient fusedLocationProviderClient;
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,32 +43,44 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        /*
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigationview);
-        bottomNavigationView.setSelectedItemId(R.id.home);
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+
+        //fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        //getLastLocation();
+
+
+
+    }
+/*
+    private void getLastLocation() {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, FINE_PERMISSION_CODE);
+            return;
+        }
+        Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.home){
-                    return true;
-                } else if (item.getItemId() == R.id.map) {
-                    startActivity(new Intent(getApplicationContext(),MapActivity.class));
-                    overridePendingTransition(0,0);
-                    return true;
-                } else if (item.getItemId() == R.id.calendar) {
-                    startActivity(new Intent(getApplicationContext(),CalendarActivity.class));
-                    overridePendingTransition(0,0);
-                    return true;
-                } else if (item.getItemId() == R.id.profile) {
-                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                    overridePendingTransition(0,0);
-                    return true;
+            public void onSuccess(Location location) {
+                if(location != null){
+                    currentLocation = location;
+
+                    SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+                    mapFragment.getMapAsync((OnMapReadyCallback) MainActivity.this);
+
                 }
-                return false;
             }
-        });*/
+        });
     }
 
+    public void onMapReady(@NonNull GoogleMap googleMap) {
 
+        myMap = googleMap;
 
+        LatLng sydney = new LatLng(-34, 151);
+        myMap.addMarker(new MarkerOptions().position(sydney).title("Sydney"));
+        CameraUpdateFactory CameraUpdateFactory = null;
+        myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+    }
+
+*/
 }

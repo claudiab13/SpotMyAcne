@@ -1,8 +1,12 @@
+
+
 pluginManagement {
     repositories {
         google()
-        mavenCentral()
         gradlePluginPortal()
+        maven {
+            url 'https://example.com/maven-repo'
+        }
     }
 }
 dependencyResolutionManagement {
