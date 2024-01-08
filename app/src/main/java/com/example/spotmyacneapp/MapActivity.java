@@ -5,13 +5,13 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentContainerView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -25,7 +25,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback{
-    private GoogleMap myMap;
     private final int FINE_PERMISSION_CODE = 1;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -44,6 +43,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
 
         });
+
+
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLastLocation();
@@ -74,12 +75,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     public void onMapReady(@NonNull GoogleMap googleMap) {
 
-        myMap = googleMap;
-
         LatLng sydney = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        myMap.addMarker(new MarkerOptions().position(sydney).title("My Location"));
+        googleMap.addMarker(new MarkerOptions().position(sydney).title("My Location"));
         CameraUpdateFactory CameraUpdateFactory = null;
-        myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
     }
 
